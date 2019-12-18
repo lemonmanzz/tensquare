@@ -9,17 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tensquare_article</artifactId>
+    <artifactId>tensquare_gathering</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.tensquare</groupId>
             <artifactId>tensquare_common</artifactId>
             <version>8.8.8</version>
         </dependency>
+        <!--mysql的连接jar-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <!--spring与jpa整合，也就是hibernate-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
