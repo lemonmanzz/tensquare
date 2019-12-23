@@ -9,8 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tensquare_common</artifactId>
+    <artifactId>rabbitmq_client</artifactId>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
         <!--添加阿里云发送短信服务的依赖-->
         <dependency>
             <groupId>com.aliyun</groupId>
@@ -21,6 +25,16 @@
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <version>3.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tensquare</groupId>
+            <artifactId>tensquare_common</artifactId>
+            <version>8.8.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.28</version>
         </dependency>
     </dependencies>
 
