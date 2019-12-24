@@ -24,10 +24,16 @@ public class AdminService {
 
     //登录认证
     public Admin findByLoginnameAndPassword(String loginname,String password){
+        System.out.println(loginname);
         Admin admin = adminDao.findByLoginname(loginname);
         if (admin != null && encoder.matches(password,admin.getPassword())){
             return admin;
         }
         return null;
+    }
+
+    //删除管理员用户
+    public void deleteById(String adminId) {
+        adminDao.deleteById(adminId);
     }
 }

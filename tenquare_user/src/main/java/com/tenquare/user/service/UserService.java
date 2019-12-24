@@ -68,11 +68,18 @@ public class UserService {
         userDao.save(user);
     }
 
+    //用户登录
     public User login(User user) {
+        //通过id
         User userDaoByLoginname = userDao.findByLoginname(user.getLoginname());
         if (userDaoByLoginname != null && encoder.matches(user.getPassword(),userDaoByLoginname.getPassword())){
             return userDaoByLoginname;
         }
         return null;
+    }
+
+    //删除普通用户
+    public void deleteById(String userId) {
+        userDao.deleteById(userId);
     }
 }
