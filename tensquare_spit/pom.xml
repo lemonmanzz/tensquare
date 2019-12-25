@@ -25,6 +25,11 @@
             <artifactId>spring-boot-starter-redis</artifactId>
             <version>1.4.0.RELEASE</version>
         </dependency>
+        <!--加入eureka-client依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

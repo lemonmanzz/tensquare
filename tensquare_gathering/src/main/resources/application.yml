@@ -1,6 +1,8 @@
 server:
   port: 9005
 spring:
+  application:
+    name: tensquare-gathering
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.25.25:3306/tensquare_gathering?useUnicode=true&characterEncoding=utf-8
@@ -12,3 +14,9 @@ spring:
     show-sql: true
   redis:
     url: 192.168.25.25
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,12 @@
+com\tenquare\user\controller\AdminController.class
+com\tenquare\user\service\UserService.class
+com\tenquare\user\config\WebSecurityConfig.class
+com\tenquare\user\pojo\Admin.class
+com\tenquare\user\dao\AdminDao.class
+com\tenquare\user\controller\UserController.class
+com\tenquare\user\service\AdminService.class
+com\tenquare\user\config\JwtInterceptorConfig.class
+com\tenquare\user\dao\UserDao.class
+com\tenquare\user\pojo\User.class
+com\tenquare\user\interceptor\JwtInterceptor.class
+com\tenquare\user\UserApplication.class

@@ -1,6 +1,8 @@
 server:
   port: 9003
 spring:
+  application:
+    name: tensquare-qa
   jpa:
     database: mysql
     show-sql: true
@@ -10,3 +12,9 @@ spring:
     url: jdbc:mysql://192.168.25.25:3306/tensquare_qa?useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true

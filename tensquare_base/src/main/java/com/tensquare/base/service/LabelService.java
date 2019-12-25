@@ -142,4 +142,15 @@ public class LabelService{
         Page pages = labelDao.findAll(createSepcification(searchLabel), PageRequest.of(page - 1, size));
         return new PageResult<>(pages.getTotalElements(),pages.getContent());
     }
+
+    /**
+     * @author: zhangyu
+     * @date: 2019-12-25
+     * @param: [id]
+     * @return: com.tensquare.base.pojo.Label
+     * 功能描述: 通过id查询
+     */
+    public Label findById(String id) {
+        return labelDao.findById(id).get();
+    }
 }

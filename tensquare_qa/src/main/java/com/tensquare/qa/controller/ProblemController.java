@@ -1,5 +1,6 @@
 package com.tensquare.qa.controller;
 
+import com.tensquare.qa.client.LabelClient;
 import com.tensquare.qa.service.ProblemService;
 import entity.Result;
 import entity.StatusCode;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProblemController {
     @Autowired
     private ProblemService problemService;
+    @Autowired
+    private LabelClient labelClient;
 
     /**
      * @author: zhangyu
@@ -36,5 +39,10 @@ public class ProblemController {
     @GetMapping("hotlist/{labelid}/{page}/{size}")
     public Result hotlist(@PathVariable String labelid, @PathVariable int page, @PathVariable int size){
         return new Result(true,StatusCode.OK,"获得热门问答列表成功",problemService.getHotList(labelid,page,size));
+    }
+
+    @GetMapping("label/{id}")
+    private Result getLabel(@PathVariable String id){
+        return labelClient.findByLabelId(id);
     }
 }

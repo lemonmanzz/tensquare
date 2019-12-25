@@ -1,0 +1,8 @@
+com\tensquare\qa\pojo\Pl.class
+com\tensquare\qa\QaApplication.class
+com\tensquare\qa\dao\ProblemDao.class
+com\tensquare\qa\pojo\Problem.class
+com\tensquare\qa\pojo\Ul.class
+com\tensquare\qa\controller\ProblemController.class
+com\tensquare\qa\pojo\Reply.class
+com\tensquare\qa\service\ProblemService.class

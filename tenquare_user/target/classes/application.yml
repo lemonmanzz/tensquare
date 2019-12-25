@@ -16,4 +16,10 @@ spring:
     generate-ddl: true
   rabbitmq:
     host: 192.168.25.25
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.6.104:6868/eureka/
+  instance:
+    prefer-ip-address: true
 

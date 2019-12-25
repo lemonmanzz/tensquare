@@ -127,6 +127,11 @@ public class LabelController {
         }
 
     }
+    @GetMapping("{id}")
+    public Result findById(@PathVariable String id){
+        System.out.println("这是第二个基础服务");
+        return new Result(true,StatusCode.ERROR,"查询成功",labelService.findById(id));
+    }
 
 
 }
