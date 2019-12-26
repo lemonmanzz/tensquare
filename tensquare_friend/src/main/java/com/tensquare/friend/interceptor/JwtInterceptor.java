@@ -36,7 +36,7 @@ public class JwtInterceptor implements HandlerInterceptor {
                 Claims claims = jwtUtil.parseToken(token);
                 if (claims != null){
                     //将claims放入请求作用域中
-                    request.setAttribute("claim",claims);
+                    request.setAttribute("claims",claims);
                 }
             }
         }

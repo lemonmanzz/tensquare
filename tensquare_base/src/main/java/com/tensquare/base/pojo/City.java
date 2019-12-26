@@ -14,7 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_city")
-public class City  implements Serializable {
+public class City  {
     @Id
     private String id; //城市id
     private String name; //城市名称

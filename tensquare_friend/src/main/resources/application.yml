@@ -5,7 +5,7 @@ spring:
     name: tensquare-friend
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.25.25:3306/tensquare_friend?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://192.168.25.25:3306/tensquare_friend?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
   jpa:
@@ -23,4 +23,3 @@ eureka:
 jwt:
   config:
     key: baidu
-    ttl: 360000

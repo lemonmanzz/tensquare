@@ -7,10 +7,7 @@ import entity.Result;
 import entity.StatusCode;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -54,6 +51,31 @@ public class FriendController {
             return new Result(false,StatusCode.ERROR,"请先登陆在添加");
         }catch (RuntimeException e){
             e.printStackTrace();
+            return new Result(false,StatusCode.ERROR,e.getMessage());
+        }
+    }
+
+    /**
+     * @author: zhangyu
+     * @date: 2019-12-26
+     * @param: [friendid]
+     * @return: entity.Result
+     * 功能描述: 删除好友
+     */
+    @DeleteMapping("{friendid}")
+    public Result delete(@PathVariable String friendid){
+        try {
+            //得到claims
+            Claims claims = (Claims) request.getAttribute("claims");
+            //判断是否是登陆的用户，即确认权限
+            if (claims != null && claims.get("roles").equals("user")){
+                //删除好友
+                friendService.delete(claims.getId(),friendid);
+                return new Result(true,StatusCode.OK,"删除好友成功");
+            }else {
+                return new Result(false,StatusCode.ACCESSERROR,"无权访问");
+            }
+        }catch (RuntimeException e){
             return new Result(false,StatusCode.ERROR,e.getMessage());
         }
     }

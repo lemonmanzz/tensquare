@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.NumberFormat;
 import java.util.Date;
@@ -17,6 +18,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 @Service
+@Transactional
 public class UserService {
     @Autowired
     private RedisTemplate redisTemplate;
@@ -81,5 +83,13 @@ public class UserService {
     //删除普通用户
     public void deleteById(String userId) {
         userDao.deleteById(userId);
+    }
+
+    public void updateFans(String userid, int x) {
+        userDao.updateFans(userid,x);
+    }
+
+    public void updateFollow(String userid, int x) {
+        userDao.updateFollow(userid,x);
     }
 }

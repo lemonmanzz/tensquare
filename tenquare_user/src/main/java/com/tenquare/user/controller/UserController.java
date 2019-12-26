@@ -84,4 +84,20 @@ public class UserController {
         }
     }
 
+    @PutMapping("/fans/{userid}/{x}")
+    public Result updateFans(@PathVariable String userid,@PathVariable int x){
+
+            userService.updateFans(userid,x);
+            return new Result(true,StatusCode.OK,"更新粉丝数成功");
+
+    }
+    @PutMapping("/follow/{userid}/{x}")
+    public Result updateFollow(@PathVariable String userid,@PathVariable int x){
+
+            userService.updateFollow(userid,x);
+            return new Result(true,StatusCode.OK,"更新关注数成功");
+
+    }
+
+
 }
