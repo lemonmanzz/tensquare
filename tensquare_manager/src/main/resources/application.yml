@@ -33,5 +33,6 @@ zuul:
   ribbon:
     eager-load:
       enabled: true
+#由于网关会自动去掉请求头，并且会自动忽略设置的敏感请求头，所以需要加一下代码
   sensitive-headers:
     - Cookie,Set-Cookie,Authorization

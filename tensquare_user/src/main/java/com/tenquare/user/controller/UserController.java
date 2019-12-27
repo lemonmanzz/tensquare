@@ -80,7 +80,7 @@ public class UserController {
             return new Result(false,StatusCode.ERROR,"无权删除");
         } catch (Exception e) {
             e.printStackTrace();
-            return new Result(false,StatusCode.ERROR,"删除失败");
+            return new Result(false,StatusCode.ERROR,"用户不存在，删除失败");
         }
     }
 
