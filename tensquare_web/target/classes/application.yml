@@ -1,0 +1,26 @@
+server:
+  port: 9012
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
+spring:
+  application:
+    name: tensquare-web
+jwt:
+  config:
+    key: baidu
+zuul:
+  routes:
+    base-api:
+      path: /base/**
+      seriveId: tensquare-base
+    qa-api:
+      path: /qa/**
+      serviceId: tensquare-qa
+  ribbon:
+      eager-load:
+        enabled: true
+  sensitive-headers:
