@@ -42,11 +42,12 @@ public class FriendController {
                 if ("1".equals(type)){
                     //调用service完成添加好友功能
                     friendService.addFriend(userId,friendId);
+                    return new Result(true,StatusCode.OK,"添加好友成功");
                 }else {
                     //调用service完成添加非好友功能
                     notFriendService.addNotFriend(userId,friendId);
+                    return new Result(true,StatusCode.OK,"添加非好友成功");
                 }
-                return new Result(true,StatusCode.OK,"添加成功");
             }
             return new Result(false,StatusCode.ERROR,"请先登陆在添加");
         }catch (RuntimeException e){

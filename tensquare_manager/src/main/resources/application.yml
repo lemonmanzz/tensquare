@@ -1,0 +1,37 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: tensquare-manager
+jwt:
+  config:
+    ttl: 3600000
+    key: baidu
+#配置eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
+  instance:
+    prefer-ip-address: true
+
+#配置zuul
+zuul:
+  routes:
+    tensquare-user:
+      path: /user/**
+      serviceId: tensquare-user
+    tensquare-friend:
+      path: /friend/**
+      serviceId: tensquare-friend
+    tensquare-qa:
+      path: /qa/**
+      serviceId: tensquare-qa
+    tensquare-base:
+      path: /base/**
+      serviceId: tensquare-base
+  ribbon:
+    eager-load:
+      enabled: true
+  sensitive-headers:
+    - Cookie,Set-Cookie,Authorization

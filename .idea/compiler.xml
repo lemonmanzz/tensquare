@@ -14,6 +14,7 @@
         <module name="tensquare_eureka" />
         <module name="tensquare_friend" />
         <module name="tensquare_gathering" />
+        <module name="tensquare_manager" />
         <module name="tensquare_qa" />
         <module name="tensquare_recruit" />
         <module name="tensquare_search" />

@@ -84,19 +84,29 @@ public class UserController {
         }
     }
 
+    /**
+     * @author: zhangyu
+     * @date: 2019-12-27
+     * @param: [userid, x]
+     * @return: entity.Result
+     * 功能描述: 更新用户的粉丝数
+     */
     @PutMapping("/fans/{userid}/{x}")
     public Result updateFans(@PathVariable String userid,@PathVariable int x){
-
             userService.updateFans(userid,x);
             return new Result(true,StatusCode.OK,"更新粉丝数成功");
-
     }
+    /**
+     * @author: zhangyu
+     * @date: 2019-12-27
+     * @param: [userid, x]
+     * @return: entity.Result
+     * 功能描述: 更新用户的关注数
+     */
     @PutMapping("/follow/{userid}/{x}")
     public Result updateFollow(@PathVariable String userid,@PathVariable int x){
-
-            userService.updateFollow(userid,x);
-            return new Result(true,StatusCode.OK,"更新关注数成功");
-
+            userService.updateFollow(userid, x);
+            return new Result(true, StatusCode.OK, "更新关注数成功");
     }
 
 

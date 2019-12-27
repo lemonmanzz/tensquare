@@ -3,6 +3,7 @@ package com.tensquare.friend.service;
 import com.tensquare.friend.client.UserClient;
 import com.tensquare.friend.dao.FriendDao;
 import com.tensquare.friend.pojo.Friend;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,14 +37,13 @@ public class FriendService {
         friendDao.save(friend);
         //反向查询，看看对方是否添加了自己为好友
         Friend friends = friendDao.findByUseridEqualsAndFriendidEquals(friendId, userId);
-        if (friends != null){//friends不为空表示对方是自己的好友，修改为互相关注，即两条数据的islike改为 1
+        if (friends != null){
             friendDao.updateIsLike(userId,friendId,"1");
             friendDao.updateIsLike(friendId,userId,"1");
         }
         //调用user模块，将对方粉丝数加1，自己的关注数加1
         userClient.updateFans(friendId,1);
         userClient.updateFollow(userId,1);
-
     }
 
     /**
