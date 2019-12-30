@@ -6,6 +6,9 @@ spring:
   data:
     elasticsearch:
       cluster-nodes: 127.0.0.1:9300
+  cloud:
+    refresh:
+      enabled: false
 eureka:
   client:
     service-url:

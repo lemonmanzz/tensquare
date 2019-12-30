@@ -5,16 +5,20 @@ import com.tensquare.base.service.LabelService;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("label")
+@RefreshScope
 public class LabelController {
     @Autowired
     private LabelService labelService;
-
+    @Value("${ip}")
+    private String ip;
     /**
      * @author: zhangyu
      * @date: 2019-12-16
@@ -24,6 +28,7 @@ public class LabelController {
      */
     @GetMapping
     public Result findAll(){
+        System.out.println("ip = " + ip);
         try {
             List<Label> labelList = labelService.findAll();
             return new Result(true,StatusCode.OK,"查询所有标签成功",labelList);

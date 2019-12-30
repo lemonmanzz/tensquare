@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: base                            #表示服务的名称     base-dev
+      profile: dev                          #表示使用的是什么版本    base-dev
+      uri: http://localhost:12000           #指定springcloudconfig的服务端规定地址
+      label: master                         #指定远程配置仓库的分支

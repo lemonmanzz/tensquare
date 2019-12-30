@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:12000
+      label: master     #代表分支
+      name: article    #表示要拿取的配置名字
+      profile: dev     #表示版本，dev开发版  proc 生成版  test测试版
